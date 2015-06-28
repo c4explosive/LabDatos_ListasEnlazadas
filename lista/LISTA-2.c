@@ -1,8 +1,9 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<stdlib.h>
-//Lista simplemente enlazada que almacene numeros enteros
-
+//Lista simplemente enlazada que ordene numeros enteros
+#define getch() system("read ")
+#define clrscr() system("clear") 
 typedef struct elementolista
 {
   int *dato;
@@ -51,9 +52,31 @@ typedef struct listaidentificar
   return 0;
  }
 
+ void ordenar(lista *lista) //ordena de menor a mayor
+  {
+   elemento *actual,*seguir;
+   int i;
+   actual=lista->inicio;
+  while(actual!=NULL)
+   {
+    seguir=actual->siguiente;
+	while(seguir!=NULL)
+	{
+	    if(actual->dato > seguir->dato)
+	     {
+	      i=seguir->dato;
+	      seguir->dato=actual->dato;
+	      actual->dato=i;
+	     }
+	     seguir=seguir->siguiente;
+	}
+       actual=actual->siguiente;
+       seguir=actual->siguiente;
+    }
+
+  }
 
 
- 
  int eliminar(lista *lista)//eliminar al inicio de la lista
  {
    elemento *elim_elemento;
@@ -84,13 +107,14 @@ void visualizar(lista *lista)//visualizar la lista
   }
 }
 
-}
+
 
  int main(void)
  {
      int *m,i;
      lista *lista1=malloc(sizeof(lista));
-     
+
+
      elemento *actual;
 
      clrscr();
@@ -103,7 +127,7 @@ void visualizar(lista *lista)//visualizar la lista
     scanf("%d",&m);
     insercion(lista1,m);
     }
-
+    ordenar(lista1);
     visualizar(lista1);
 
    getch();
