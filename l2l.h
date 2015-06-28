@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #define clrscr() system("clear")
 #define getch() system("read ")
