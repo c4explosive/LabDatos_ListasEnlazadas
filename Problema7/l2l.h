@@ -141,8 +141,8 @@ void i2ns(l2ist * lst, int num,int dat,int mod) //Insertar elementos en lista..
 		    }
 		    act=act->next;
     		}
-		if (est==0)
-		    printf("El elemento no està\n");
+		/*if (est==0)
+		    printf("El elemento no està\n");*/
 		break;
 	    case 4:
 		//Insertar antes de un nodo
