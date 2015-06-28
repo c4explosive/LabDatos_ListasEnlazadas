@@ -6,9 +6,9 @@
 #define clrscr() system("clear") 
 typedef struct elementolista
 {
-  int *dato;
+  int dato;
   struct elementolista *siguiente;
-}elemento;
+} elemento;
 
 typedef struct listaidentificar
 {
@@ -19,7 +19,7 @@ typedef struct listaidentificar
 
  void inicializacion(lista *lista)
  {
-
+  
   lista->inicio= NULL;
   lista->final= NULL;
   lista->tam=0;
@@ -55,6 +55,8 @@ typedef struct listaidentificar
  void ordenar(lista *lista) //ordena de menor a mayor
   {
    elemento *actual,*seguir;
+   seguir=malloc(sizeof(int));
+   actual=malloc(sizeof(int));
    int i;
    actual=lista->inicio;
   while(actual!=NULL)
@@ -71,7 +73,7 @@ typedef struct listaidentificar
 	     seguir=seguir->siguiente;
 	}
        actual=actual->siguiente;
-       seguir=actual->siguiente;
+       //seguir=actual->siguiente;
     }
 
   }
@@ -102,8 +104,9 @@ void visualizar(lista *lista)//visualizar la lista
  actual=lista->inicio;
  while(actual!=NULL)
  {
-  printf("\n %p - %d",actual, actual->dato);
+  printf("%p - %d",actual, actual->dato);
   actual=actual->siguiente;
+  printf("\n");
   }
 }
 
