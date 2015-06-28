@@ -42,24 +42,34 @@ n2od * b2node(n2od * nodo)
 void i2mp(l2ist * l1)
 {
     n2od * act=l1->start;
-    while( act != NULL)
+    if(l1->size==0)
+        printf("La lista está vacía\n");
+    else
     {
-        printf("%d,",act->x);
-        //printf("%p->%p  ",act,act->next);
-        act=act->next;
+    	while( act != NULL)
+    	{
+            printf("%d,",act->x);
+            //printf("%p->%p  ",act,act->next);
+            act=act->next;
+    	}
+        printf("\b \n");
     }
-    printf("\n");
 }
 
 void pm2i(l2ist * l1)
 {
     n2od * act=l1->end;
-    while( act != NULL)
+    if(l1->size==0)
+        printf("La lista está vacía\n");
+    else
     {
-        printf("%d,",act->x);
-        act=act->before;
+    	while( act != NULL)
+    	{
+            printf("%d,",act->x);
+            act=act->before;
+    	}
+        printf("\n");
     }
-    printf("\n");
 }
 
 
