@@ -51,7 +51,6 @@ void l2oadl(l2ist * l1)
     {
 	printf("Ingrese el elemento %i: ",i+1);
 	scanf("%d",&elem);
-	//elem=i+1;
 	i2ns(l1,elem,0,1);
     }
 }
